@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Handle Bars</title>
+	<link rel="stylesheet" href="/stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" href="/stylesheets/demo.css">
+	<link rel="stylesheet" href="/stylesheets/header-basic-light.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+<header class="header-basic-light">
+
+	<div class="header-limiter">
+
+		<h1><img id="logo-img" src="/images/logo.png"></h1>
+
+		<nav>
+			<a href="#" class="selected">Home</a>
+			<a href="#">Blog</a>
+			<a href="#">About</a>
+			<a href="#">Faq</a>
+			<a href="#">Contact</a>
+		</nav>
+	</div>
+
+</header>
+
+
+
+<div class="menu">
+	<div class="container">
+		<form class="form-horizontal" id="edit-form">
+			<fieldset>
+
+				<!-- Form Name -->
+				<legend>Edit</legend>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Name">Name</label>  
+				  <div class="col-md-4">
+				  <input id="name" name="Name" placeholder="Name" class="form-control input-md" required="" type="text">
+				    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="phone">Phone</label>  
+				  <div class="col-md-4">
+				  <input id="phone" name="phone" placeholder="Phone" class="form-control input-md" required="" type="text">
+				    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Employee Code">Employee Code</label>  
+				  <div class="col-md-4">
+				  <input id="empcode" name="Employee Code" placeholder="Employee Code" class="form-control input-md" required="" type="text">
+				    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Email">Email</label>  
+				  <div class="col-md-4">
+				  <input id="email" name="Email" placeholder="Email" class="form-control input-md" required="" type="text">
+				    
+				  </div>
+				</div>
+
+				<!-- Text input-->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="Job Title">Job Title</label>  
+				  <div class="col-md-4">
+				  <input id="jobtitle" name="Job Title" placeholder="Job Title" class="form-control input-md" required="" type="text">
+				    
+				  </div>
+				</div>
+
+				<!-- Button -->
+				<div class="form-group">
+				  <label class="col-md-4 control-label" for="edit"></label>
+				  <div class="col-md-4">
+				    <button id="edit" name="edit" class="btn btn-primary">Save</button>
+				  </div>
+				</div>
+
+			</fieldset>
+		</form>
+
+	</div>
+</div>
+
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<script src="/javascripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('.delete-user').on('click',function(){
+			var userId=$(this).attr('data-attr-id');
+			$.ajax({
+				url:"/users",
+				type:"DELETE",
+				data:{
+					userid:userId
+				}				
+			}).done(function(){
+				$('#user-'+userId).remove();
+			});
+		});
+
+		$('#edit-form').on('submit',function(){
+			var userId=$(this).attr('data-attr-id'),
+				name =$('#name').val(),
+				jobtitle =$('#jobtitle').val(),
+				email =$('#email').val(),
+				empcode =$('#empcode').val(),
+				phone =$('#phone').val();
+			$.ajax({
+				url:"/users",
+				type:"PUT",
+				data:{
+					userid:userId
+				}				
+			}).done(function(){
+				$('#user-'+userId).remove();
+			});
+		})
+	});
+
+</script>
+</html>

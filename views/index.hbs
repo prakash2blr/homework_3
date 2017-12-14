@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Handle Bars</title>
+	<link rel="stylesheet" href="stylesheets/bootstrap.min.css">
+	<link rel="stylesheet" href="stylesheets/demo.css">
+	<link rel="stylesheet" href="stylesheets/header-basic-light.css">
+	<link href='http://fonts.googleapis.com/css?family=Cookie' rel='stylesheet' type='text/css'>
+
+</head>
+
+<body>
+
+<header class="header-basic-light">
+
+	<div class="header-limiter">
+
+		<h1><img id="logo-img" src="images/logo.png"></h1>
+
+		<nav>
+			<a href="#" class="selected">Home</a>
+			<a href="#">Blog</a>
+			<a href="#">About</a>
+			<a href="#">Faq</a>
+			<a href="#">Contact</a>
+		</nav>
+	</div>
+
+</header>
+
+
+
+<div class="menu">
+	<div class="container">
+		<table id="myTable" class="table table-striped">
+			<thead>
+				<th class="text-center">Id</th>
+				<th class="text-center">Name</th>
+				<th class="text-center">Email</th>
+				<th class="text-center">Job Title</th>
+				<th class="text-center">Emp Code</th>
+				<th class="text-center">Phone</th>
+				<th></th>
+			</thead>
+			<tbody>
+				{{#each result}}
+					<tr id="user-{{id}}">
+						<td><a href="/users/{{id}}">{{id}}</a></td>
+						<td>{{name}}</td>
+						<td>{{email}}</td>
+						<td>{{job_title}}</td>
+						<td>{{employee_code}}</td>
+						<td>{{phone}}</td>
+						<td data-attr-id = "{{id}}"  class="delete-user glyphicon glyphicon-trash"></td>
+					</tr>
+				{{/each}}
+			</tbody>
+		</table>
+	</div>
+</div>
+
+
+
+
+
+</body>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
+<script src="javascripts/bootstrap.min.js"></script>
+<script type="text/javascript">
+	
+	$(document).ready(function(){
+		$('.delete-user').on('click',function(){
+			var userId=$(this).attr('data-attr-id');
+			$.ajax({
+				url:"/users",
+				type:"DELETE",
+				data:{
+					userid:userId
+				}				
+			}).done(function(){
+				$('#user-'+userId).remove();
+			})
+		});
+	});
+
+</script>
+</html>

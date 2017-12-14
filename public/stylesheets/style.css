@@ -1,0 +1,24 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+      background-color: #eaf0f2 !important;
+  }
+
+a {
+  color: #00B7FF;
+}
+
+
+#logo-img{
+	width: auto;
+    height: 50px;
+}
+
+#myTable{
+	background: #fff;
+}
+
+#myTable .delete-user{
+	cursor: pointer;
+	display: table-cell;
+}
