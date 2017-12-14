@@ -8,7 +8,6 @@
 4) change values in db.js in db folder
 5) npm start
 
-# API
 1) Open your favourite browser and use below details.
 	<ul>
 		<li>URL : `http://domain:port(default is 3000 )/users`</li>
