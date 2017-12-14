@@ -25,7 +25,7 @@
 
 		<nav>
 			<a href="/users">Home</a>
-			<a href="/users/add" class="selected" >Add User</a>
+			<a href="#" class="selected" >Add User</a>
 		</nav>
 	</div>
 
@@ -35,17 +35,17 @@
 
 <div class="menu">
 	<div class="container">
-		<form class="form-horizontal" id="edit-form" data-attr-id="{{result.id}}">
+		<form class="form-horizontal" id="add-form">
 			<fieldset>
 
 				<!-- Form Name -->
-				<legend>Edit</legend>
+				<legend>Add</legend>
 
 				<!-- Text input-->
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Name">Name</label>  
 				  <div class="col-md-4">
-				  <input id="name" name="Name" placeholder="Name" class="form-control input-md" required="" value="{{result.name}}" type="text">
+				  <input id="name" name="Name" placeholder="Name" class="form-control input-md" required="" type="text">
 				    
 				  </div>
 				</div>
@@ -54,7 +54,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="phone">Phone</label>  
 				  <div class="col-md-4">
-				  <input id="phone" name="phone" placeholder="Phone" class="form-control input-md" required="" value="{{result.phone}}"  type="text">
+				  <input id="phone" name="phone" placeholder="Phone" class="form-control input-md" required=""  type="text">
 				    
 				  </div>
 				</div>
@@ -63,7 +63,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Employee Code">Employee Code</label>  
 				  <div class="col-md-4">
-				  <input id="empcode" name="Employee Code" placeholder="Employee Code" class="form-control input-md" value="{{result.employee_code}}" required="" type="text">
+				  <input id="empcode" name="Employee Code" placeholder="Employee Code" class="form-control input-md" required="" type="text">
 				    
 				  </div>
 				</div>
@@ -72,7 +72,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Email">Email</label>  
 				  <div class="col-md-4">
-				  <input id="email" name="Email" placeholder="Email" class="form-control input-md" required="" value="{{result.email}}" type="email">
+				  <input id="email" name="Email" placeholder="Email" class="form-control input-md" required="" type="email">
 				    
 				  </div>
 				</div>
@@ -81,7 +81,7 @@
 				<div class="form-group">
 				  <label class="col-md-4 control-label" for="Job Title">Job Title</label>  
 				  <div class="col-md-4">
-				  <input id="jobtitle" name="Job Title" value="{{result.job_title}}" placeholder="Job Title" class="form-control input-md" required="" type="text">
+				  <input id="jobtitle" name="Job Title" placeholder="Job Title" class="form-control input-md" required="" type="text">
 				    
 				  </div>
 				</div>

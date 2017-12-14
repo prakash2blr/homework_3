@@ -24,11 +24,8 @@
 		<h1><img id="logo-img" src="images/logo.png"></h1>
 
 		<nav>
-			<a href="#" class="selected">Home</a>
-			<a href="#">Blog</a>
-			<a href="#">About</a>
-			<a href="#">Faq</a>
-			<a href="#">Contact</a>
+			<a href="/users">Home</a>
+			<a href="/users/add" class="selected" >Add User</a>
 		</nav>
 	</div>
 
@@ -73,22 +70,5 @@
 
 <script src="https://code.jquery.com/jquery-3.2.1.min.js" ></script>
 <script src="javascripts/bootstrap.min.js"></script>
-<script type="text/javascript">
-	
-	$(document).ready(function(){
-		$('.delete-user').on('click',function(){
-			var userId=$(this).attr('data-attr-id');
-			$.ajax({
-				url:"/users",
-				type:"DELETE",
-				data:{
-					userid:userId
-				}				
-			}).done(function(){
-				$('#user-'+userId).remove();
-			})
-		});
-	});
-
-</script>
+<script src="/javascripts/main.js"></script>
 </html>
