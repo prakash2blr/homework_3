@@ -1,4 +1,4 @@
-# This is simple example for Handlebar
+# This is simple example for Handlebars
 
 # Steps to install (run following commands)
 
